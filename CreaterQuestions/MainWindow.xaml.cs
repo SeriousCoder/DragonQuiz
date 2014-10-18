@@ -110,6 +110,15 @@ namespace CreaterQuestions
             
         }
 
+        private void DeleteBotton_Click(object sender, RoutedEventArgs e)
+        {
+            if (QList.SelectedIndex != -1)
+            {
+                _listQuestions.RemoveAt(QList.SelectedIndex);
+                QList.ItemsSource = _listQuestions;
+            }
+        }
+
 
     }
 }
