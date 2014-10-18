@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DragonQuiz;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DragonQuiz;
 
 namespace CreaterQuestions
 {
@@ -34,38 +22,118 @@ namespace CreaterQuestions
             QList.ItemsSource = _listQuestions;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OffForm_OnButtons()
         {
-            Status.Text = "Add";
-            txtTag.IsEnabled = true;
-            txtContent.IsEnabled = true;
-            txtAnswer.IsEnabled = true;
-            txtComment.IsEnabled = true;
-            OkButton.IsEnabled = true;
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            switch (Status.Text)
-            {
-                case "Add":
-                    var newQuestion = new DQuestion(0, txtContent.Text, txtAnswer.Text, txtComment.Text, txtTag.Text);
-                    _listQuestions.Add(newQuestion);
-                    QList.ItemsSource = _listQuestions;
-                    break;
-            }
-
-            txtContent.Text = "";
-            txtAnswer.Text = "";
-            txtComment.Text = "";
-            Status.Text = "";
             txtTag.IsEnabled = false;
             txtContent.IsEnabled = false;
             txtAnswer.IsEnabled = false;
             txtComment.IsEnabled = false;
             OkButton.IsEnabled = false;
+            CancelButton.IsEnabled = false;
+            AddButton.IsEnabled = true;
+            EditButton.IsEnabled = true;
+            DeleteBotton.IsEnabled = true;
+            SyncBotton.IsEnabled = true;
+            PushBotton.IsEnabled = true;
+            QList.IsEnabled = true;
         }
 
+        private void OnForm_OffButtons()
+        {
+            txtTag.IsEnabled = true;
+            txtContent.IsEnabled = true;
+            txtAnswer.IsEnabled = true;
+            txtComment.IsEnabled = true;
+            OkButton.IsEnabled = true;
+            CancelButton.IsEnabled = true;
+            AddButton.IsEnabled = false;
+            EditButton.IsEnabled = false;
+            DeleteBotton.IsEnabled = false;
+            SyncBotton.IsEnabled = false;
+            PushBotton.IsEnabled = false;
+            QList.IsEnabled = false;
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Status.Text = "Add";
+            OnForm_OffButtons();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (CheckOfIdiot())
+            {
+                var newQuestion = new DQuestion(0, txtContent.Text, txtAnswer.Text, txtComment.Text, txtTag.Text);
+                switch (Status.Text)
+                {
+                    case "Add":
+                        _listQuestions.Add(newQuestion);
+                        break;
+                    case "Edit":
+                        _listQuestions[QList.SelectedIndex] = newQuestion;
+                        break;
+                }
+
+                QList.ItemsSource = _listQuestions;
+                txtContent.Text = "";
+                txtAnswer.Text = "";
+                txtComment.Text = "";
+                Status.Text = "";
+                OffForm_OnButtons();
+            }
+            else
+            {
+                MessageBox.Show("You must full graphs: Tags, Content and Answer");
+            }
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (QList.SelectedIndex != -1)
+            {
+                Status.Text = "Edit";
+                OnForm_OffButtons();
+
+                txtTag.Text = _listQuestions[QList.SelectedIndex].Tags;
+                txtContent.Text = _listQuestions[QList.SelectedIndex].Content;
+                txtAnswer.Text = _listQuestions[QList.SelectedIndex].Answer;
+                txtComment.Text = _listQuestions[QList.SelectedIndex].Comment;
+            }
+        }
+
+        private void QList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void DeleteBotton_Click(object sender, RoutedEventArgs e)
+        {
+            if (QList.SelectedIndex != -1)
+            {
+                _listQuestions.RemoveAt(QList.SelectedIndex);
+                QList.ItemsSource = _listQuestions;
+            }
+        }
+
+        private bool CheckOfIdiot()
+        {
+            if (txtContent.Text != "" && txtAnswer.Text != "" && txtTag.Text != "")
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            txtTag.Text = "";
+            txtContent.Text = "";
+            txtAnswer.Text = "";
+            txtComment.Text = "";
+            Status.Text = "";
+            OffForm_OnButtons();
+        }
     }
 }
