@@ -8,7 +8,13 @@ using System.Threading.Tasks;
 namespace DragonQuiz
 {
 	public class ServerDbContext : DbContext
-    {
+	{
+
+		public ServerDbContext()
+			: base("name=DragonQuizDb")
+		{
+
+		}
 		public DbSet<DQuestion> Questions { get; set; }
-    }
+	}
 }

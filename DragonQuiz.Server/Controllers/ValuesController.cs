@@ -5,13 +5,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Newtonsoft.Json;
 
 namespace DragonQuiz.Controllers
 {
 	public class ValuesController : ApiController
 	{
 		// GET api/values
-		public List<DQuestion> Get()
+		public string Get()
 		{
 			using (var db = new DragonQuiz.ServerDbContext())
 			{
@@ -20,7 +21,7 @@ namespace DragonQuiz.Controllers
 							orderby b.Content
 							select b;
 
-				return (List<DQuestion>)query;
+				return JsonConvert.SerializeObject(query.ToArray<DQuestion>());
 			}
 			
 			/* return new List<DQuestion>() {
@@ -29,27 +30,58 @@ namespace DragonQuiz.Controllers
 		}
 
 		// GET api/values/5
-		public List<DQuestion> Get(DRequest request)
+		public DQuestion[] Get(int qNum, string tags)
 		{
 			using (var db = new DragonQuiz.ServerDbContext())
 			{
 				// Display all Blogs from the database 
 				var query = from b in db.Questions
-							where b.Tags == request.Tags // HACK: отвратительный костыль; а если тегов несколько?
+							
+							where b.Tags == tags // HACK: отвратительный костыль; а если тегов несколько?
+							
 							select b;
 
-				return (List<DQuestion>)query;
-			}
+				//DQuestion[] qArr = query.ToArray<DQuestion>(); 
 
-			 /* return new List<DQuestion>() {
-				new DQuestion(0, "Epic win?", "Epic win!", "", "common")
-			}; */
+				Random rnd = new Random();
+				var res = query.Take(qNum).ToArray();
+				//if (qArr.Length < qNum)
+				//string s = JsonConvert.SerializeObject(res);
+				////return s;
+
+				//var r = new HttpResponseMessage()
+				//{
+				//	Content = s;
+					
+				//};
+
+				return res;
+			}
 		}
 
 		// POST api/values
 		public void Post([FromBody]List<DQuestion> questionsList)
 		{
-			// TODO: post the questions to DB
+			// posts or updates each item from the received question list
+			using (var db = new DragonQuiz.ServerDbContext())
+			{
+				foreach (var item in questionsList)
+				{
+					var foundItem = db.Questions
+						  .Where(p => p.Content == item.Content).FirstOrDefault();
+
+					if (foundItem == null)
+					{
+						db.Questions.Add(item);
+					}
+					else
+					{
+						db.Entry(foundItem).CurrentValues.SetValues(item);
+					}
+				}
+
+				db.SaveChanges();
+			}
 		}
 
 		// PUT api/values/5
