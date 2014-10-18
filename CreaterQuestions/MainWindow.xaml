@@ -12,7 +12,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="15"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="PushBotton" Content="Push" HorizontalAlignment="Left" Margin="1,294,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22"/>
+        <Button x:Name="PushBotton" Content="Push" HorizontalAlignment="Left" Margin="1,294,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22" Click="PushBotton_Click"/>
         <TextBox x:Name="txtTag" HorizontalAlignment="Left" Height="23" Margin="73,50,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="258" Grid.Column="1" IsEnabled="False"/>
         <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="1,51,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22" Click="Button_Click"/>
         <TextBox x:Name="txtContent" HorizontalAlignment="Left" Height="91" Margin="73,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Grid.Column="1" IsEnabled="False" />

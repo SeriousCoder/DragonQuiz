@@ -33,5 +33,10 @@ namespace DragonQuiz
 			QuestionsNumber = questionsNumber;
 			Tags = tags;
 		}
+
+		public override string ToString()
+		{
+			return "?qNum=" + QuestionsNumber + "&tags=" + Tags;
+		}
 	}
 }

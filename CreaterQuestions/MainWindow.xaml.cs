@@ -1,4 +1,6 @@
-﻿using DragonQuiz;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DragonQuiz;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -134,6 +136,16 @@ namespace CreaterQuestions
             txtComment.Text = "";
             Status.Text = "";
             OffForm_OnButtons();
+        }
+
+        private void PushBotton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_listQuestions.Count != 0)
+            {
+                DatabaseIO.PushQuestions(_listQuestions.ToList());
+                _listQuestions.Clear();
+                QList.ItemsSource = _listQuestions;
+            }
         }
     }
 }
