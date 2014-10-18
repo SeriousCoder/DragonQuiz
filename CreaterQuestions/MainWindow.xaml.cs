@@ -75,6 +75,12 @@ namespace CreaterQuestions
                     case "Edit":
                         _listQuestions[QList.SelectedIndex] = newQuestion;
                         break;
+                    case "Sync":
+                        foreach (var quest in DatabaseIO.GetPack(new DRequest(0, txtTag.Text)))
+                        {
+                            _listQuestions.Add(quest);
+                        }
+                        break;
                 }
 
                 QList.ItemsSource = _listQuestions;
@@ -120,7 +126,7 @@ namespace CreaterQuestions
 
         private bool CheckOfIdiot()
         {
-            if (txtContent.Text != "" && txtAnswer.Text != "" && txtTag.Text != "")
+            if ((txtTag.Text != "" && Status.Text == "Sync" )|| (txtContent.Text != "" && txtAnswer.Text != "" && txtTag.Text != ""))
             {
                 return true;
             }
@@ -146,6 +152,14 @@ namespace CreaterQuestions
                 _listQuestions.Clear();
                 QList.ItemsSource = _listQuestions;
             }
+        }
+
+        private void SyncBotton_Click(object sender, RoutedEventArgs e)
+        {
+            txtTag.IsEnabled = true;
+            Status.Text = "Sync";
+            OkButton.IsEnabled = true;
+            CancelButton.IsEnabled = true;
         }
     }
 }

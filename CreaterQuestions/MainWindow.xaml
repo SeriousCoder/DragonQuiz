@@ -36,7 +36,7 @@
         <Button x:Name="OkButton" Content="Ok" Grid.Column="1" HorizontalAlignment="Left" Margin="99,317,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="Button_Click_1"/>
         <Button x:Name="EditButton" Content="Edit" Grid.Column="3" HorizontalAlignment="Left" Margin="0,78,0,0" VerticalAlignment="Top" Width="75" Click="EditButton_Click"/>
         <Button x:Name="DeleteBotton" Content="Delete" Grid.Column="3" HorizontalAlignment="Left" Margin="0,105,0,0" VerticalAlignment="Top" Width="75" Click="DeleteBotton_Click"/>
-        <Button x:Name="SyncBotton" Content="Sync" Grid.Column="3" HorizontalAlignment="Left" Margin="1,267,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="SyncBotton" Content="Sync" Grid.Column="3" HorizontalAlignment="Left" Margin="1,267,0,0" VerticalAlignment="Top" Width="75" Click="SyncBotton_Click"/>
         <Button x:Name="CancelButton" Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="189,317,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="Cancel_Click"/>
 
 
