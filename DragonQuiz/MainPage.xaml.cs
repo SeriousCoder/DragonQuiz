@@ -57,6 +57,7 @@ namespace DragonQuiz
             Integration.Request request = new Integration.Request();
             request.setRequest((int)numberBox.SelectedItem, tagBox.Text);
             var response = Integration.getPackage(request);
+            //var response = DragonQuiz.Common.GetPack(request);
             setQList(response);
         }
 

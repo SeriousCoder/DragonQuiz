@@ -31,21 +31,23 @@ namespace Sandbox
 						item.Id, item.Content, item.Answer, item.Comment, item.Tags)); 
 				} */
 
-				 /*DQuestion question = new DQuestion(0, "Sample?", "Sample!", "", "common");
+				//DQuestion question = new DQuestion(0, "Sample?", "Sample!", "", "common");
 				
 
-				var list = new List<DQuestion>() {
-					new DQuestion(0, "Sample?", "Sample!", "", "common"),
-					new DQuestion(1, "Sample 2?", "Sample 2, ORLY!", "", "common")
-				};
+				//var list = new List<DQuestion>() {
+				//	new DQuestion(0, "Sample?", "Sample!", "", "common"),
+				//	new DQuestion(1, "Sample 2?", "Sample 2, ORLY!", "", "common")
+				//};
 
-				string s = JsonConvert.SerializeObject(list);
-				Console.WriteLine(s + "\n");
+				//DatabaseIO.PushQuestions(list);
 
-				var newList = JsonConvert.DeserializeObject<List<DQuestion>>(s); */
+				//string s = JsonConvert.SerializeObject(list);
+				//Console.WriteLine(s + "\n");
+
+				//var newList = JsonConvert.DeserializeObject<List<DQuestion>>(s);
 
 				// kick server
-				var list = DatabaseIO.GetPack(new DRequest(5, "FirstTag"));
+				var list = DatabaseIO.GetPack(new DRequest(5, "common"));
 
 				if (list == null)
 				{
