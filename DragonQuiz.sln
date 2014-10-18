@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonQuiz.Common", "DragonQuiz.Common\DragonQuiz.Common.csproj", "{BA5A2313-7993-4FFD-97F1-459E5D301520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonQuiz.Server", "DragonQuiz.Server\DragonQuiz.Server.csproj", "{1B3A572B-ACD2-46C6-AF0E-0CDBFD4F305E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA5A2313-7993-4FFD-97F1-459E5D301520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5A2313-7993-4FFD-97F1-459E5D301520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5A2313-7993-4FFD-97F1-459E5D301520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5A2313-7993-4FFD-97F1-459E5D301520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3A572B-ACD2-46C6-AF0E-0CDBFD4F305E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3A572B-ACD2-46C6-AF0E-0CDBFD4F305E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3A572B-ACD2-46C6-AF0E-0CDBFD4F305E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3A572B-ACD2-46C6-AF0E-0CDBFD4F305E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
