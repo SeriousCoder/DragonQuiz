@@ -2,8 +2,8 @@
     x:Class="DragonQuiz.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:DragonQuiz">
-
+    xmlns:local="using:DragonQuiz"
+    RequestedTheme="Light">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
