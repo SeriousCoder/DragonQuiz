@@ -13,7 +13,7 @@ namespace DragonQuiz
 {
     public class DatabaseIO
     {
-		private const string SERVER_URL = "http://localhost:60165/api/values";
+		private const string SERVER_URL = "http://91.225.131.178:60165/api/values";
 		public static List<DQuestion> GetPack(DRequest request)
 		{
 			try
