@@ -34,14 +34,38 @@ namespace CreaterQuestions
             QList.ItemsSource = _listQuestions;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OffForm_OnButtons()
         {
-            Status.Text = "Add";
+            txtTag.IsEnabled = false;
+            txtContent.IsEnabled = false;
+            txtAnswer.IsEnabled = false;
+            txtComment.IsEnabled = false;
+            OkButton.IsEnabled = false;
+            AddBotton.IsEnabled = true;
+            EditButton.IsEnabled = true;
+            DeleteBotton.IsEnabled = true;
+            SyncBotton.IsEnabled = true;
+            PushBotton.IsEnabled = true;
+        }
+
+        private void OnForm_OffButtons()
+        {
             txtTag.IsEnabled = true;
             txtContent.IsEnabled = true;
             txtAnswer.IsEnabled = true;
             txtComment.IsEnabled = true;
             OkButton.IsEnabled = true;
+            AddBotton.IsEnabled = false;
+            EditButton.IsEnabled = false;
+            DeleteBotton.IsEnabled = false;
+            SyncBotton.IsEnabled = false;
+            PushBotton.IsEnabled = false;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Status.Text = "Add";
+            OnForm_OffButtons();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -53,17 +77,21 @@ namespace CreaterQuestions
                     _listQuestions.Add(newQuestion);
                     QList.ItemsSource = _listQuestions;
                     break;
+                //case "Edit":
+
             }
 
             txtContent.Text = "";
             txtAnswer.Text = "";
             txtComment.Text = "";
             Status.Text = "";
-            txtTag.IsEnabled = false;
-            txtContent.IsEnabled = false;
-            txtAnswer.IsEnabled = false;
-            txtComment.IsEnabled = false;
-            OkButton.IsEnabled = false;
+            OffForm_OnButtons();
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            Status.Text = "Edit";
+            OnForm_OffButtons();
         }
 
 

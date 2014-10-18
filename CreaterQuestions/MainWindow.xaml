@@ -12,9 +12,9 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="15"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Push" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22"/>
+        <Button x:Name="PushBotton" Content="Push" HorizontalAlignment="Left" Margin="0,294,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22"/>
         <TextBox x:Name="txtTag" HorizontalAlignment="Left" Height="23" Margin="73,50,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="75" Grid.Column="1" IsEnabled="False"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="0,94,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22" Click="Button_Click"/>
+        <Button x:Name="AddBotton" Content="Add" HorizontalAlignment="Left" Margin="1,51,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22" Click="Button_Click"/>
         <TextBox x:Name="txtContent" HorizontalAlignment="Left" Height="91" Margin="73,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Grid.Column="1" IsEnabled="False" />
         <TextBox x:Name="txtAnswer" HorizontalAlignment="Left" Height="23" Margin="75,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="0,192,0,0" TextWrapping="Wrap" Text="Answer :" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="68" TextAlignment="Center"/>
@@ -32,8 +32,11 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock x:Name="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="18,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.9,-0.625"/>
+        <TextBlock x:Name="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="10,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.9,-0.625" Width="313" TextAlignment="Center"/>
         <Button x:Name="OkButton" Content="Ok" Grid.Column="1" HorizontalAlignment="Left" Margin="123,316,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="Button_Click_1"/>
+        <Button x:Name="EditButton" Content="Edit" Grid.Column="3" HorizontalAlignment="Left" Margin="0,78,0,0" VerticalAlignment="Top" Width="75" Click="EditButton_Click"/>
+        <Button x:Name="DeleteBotton" Content="Delete" Grid.Column="3" HorizontalAlignment="Left" Margin="0,105,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="SyncBotton" Content="Sync" Grid.Column="3" HorizontalAlignment="Left" Margin="1,267,0,0" VerticalAlignment="Top" Width="75"/>
 
 
     </Grid>
