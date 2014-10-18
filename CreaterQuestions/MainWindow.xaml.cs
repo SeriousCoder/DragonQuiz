@@ -76,7 +76,7 @@ namespace CreaterQuestions
                         _listQuestions[QList.SelectedIndex] = newQuestion;
                         break;
                     case "Sync":
-                        foreach (var quest in DatabaseIO.GetPack(new DRequest(0, txtTag.Text)))
+                        foreach (var quest in DatabaseIO.GetPack(new DRequest(2147400000, txtTag.Text)))
                         {
                             _listQuestions.Add(quest);
                         }
