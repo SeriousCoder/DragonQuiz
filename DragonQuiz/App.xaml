@@ -6,6 +6,16 @@
     RequestedTheme="Light">
     <Application.Resources>
         <ResourceDictionary>
+            <SolidColorBrush x:Key="ListViewItemSelectedBackgroundThemeBrush" Color="#CC00AD9F" />
+            <SolidColorBrush x:Key="ListViewItemSelectedPointerOverBackgroundThemeBrush" Color="#CC00AD9F" />
+            <SolidColorBrush x:Key="ListViewItemSelectedPointerOverBorderThemeBrush" Color="#CC00AD9F" />
+
+            <SolidColorBrush x:Key="ComboBoxItemSelectedBackgroundThemeBrush" Color="#CC00AD9F" />
+            <SolidColorBrush x:Key="ComboBoxItemSelectedPointerOverBackgroundThemeBrush" Color="#CC058B80" />
+
+            <SolidColorBrush x:Key="SliderTrackDecreaseBackgroundThemeBrush" Color="#CC00AD9F" />
+            <SolidColorBrush x:Key="SliderTrackDecreasePressedBackgroundThemeBrush" Color="#CC00AD9F" />
+            <SolidColorBrush x:Key="SliderTrackDecreasePointerOverBackgroundThemeBrush" Color="#CC009D91" />
             <ResourceDictionary.MergedDictionaries>
 
                 <!-- 
