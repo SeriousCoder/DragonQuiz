@@ -27,7 +27,7 @@ namespace DragonQuiz
 	{
 		public int QuestionsNumber { get; set; }
 		public string Tags { get; set; }
-		public DRequest(int questionsNumber, string tags)
+		public DRequest(int questionsNumber, string tags) : this()
 		{
 			this.QuestionsNumber = questionsNumber;
 			this.Tags = tags;

@@ -21,7 +21,7 @@ namespace DragonQuiz
 			return stub;
 		}
 
-		public void PushQuestions(List<DQuestion>) {
+		public void PushQuestions(List<DQuestion> list) {
 			return;
 		}
     }
