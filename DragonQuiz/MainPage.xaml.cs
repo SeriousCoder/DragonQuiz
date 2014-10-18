@@ -19,14 +19,14 @@ namespace DragonQuiz
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    
+
     public sealed partial class MainPage : Page
     {
         List<int> comboBoxItems = new List<int>();
         public MainPage()
         {
             this.InitializeComponent();
-           // this.ApplicationTheme.Light;
+            // this.ApplicationTheme.Light;
             for (int i = 1; i <= 10; ++i)
             {
                 comboBoxItems.Add(i);
@@ -34,6 +34,7 @@ namespace DragonQuiz
 
             numberBox.DataContext = this;
             numberBox.ItemsSource = comboBoxItems;
+            numberBox.SelectedIndex = 2;
 
         }
 
@@ -57,6 +58,25 @@ namespace DragonQuiz
             request.setRequest((int)numberBox.SelectedItem, tagBox.Text);
             var response = Integration.getPackage(request);
             setQList(response);
+        }
+
+        private void QList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void QList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Question.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Answer.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Comment.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            FeedBack.IsEnabled = true;
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            FeedBack.IsEnabled = false;
         }
     }
 }
