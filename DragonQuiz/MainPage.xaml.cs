@@ -47,17 +47,16 @@ namespace DragonQuiz
         {
         }
 
-        void setQList(List<Integration.DQuestion> list)
+        void setQList(List<DQuestion> list)
         {
             QList.ItemsSource = list;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            Integration.Request request = new Integration.Request();
-            request.setRequest((int)numberBox.SelectedItem, tagBox.Text);
-            var response = Integration.getPackage(request);
-            //var response = DragonQuiz.Common.GetPack(request);
+			DRequest request = new DRequest((int)numberBox.SelectedItem, tagBox.Text);
+            //var response = Integration.getPackage(request);
+            List<DQuestion> response = await DatabaseIO.GetPack(request);
             setQList(response);
         }
 
