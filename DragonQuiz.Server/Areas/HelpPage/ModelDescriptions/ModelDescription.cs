@@ -1,6 +1,6 @@
 using System;
 
-namespace DragonQuiz_Server.Areas.HelpPage.ModelDescriptions
+namespace DragonQuiz.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

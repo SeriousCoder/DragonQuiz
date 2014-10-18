@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonQuiz.Server", "Dragon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaterQuestions", "CreaterQuestions\CreaterQuestions.csproj", "{6ABE3466-A65D-4359-95CD-409C93517E65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonQuiz.ServerDatabase", "DragonQuiz.Database\DragonQuiz.ServerDatabase.csproj", "{0B8D2718-B288-4F06-85C9-D7A6BAE6D72A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{6496DC90-2E3F-49FC-8AF4-B58F6CC0AD48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{6ABE3466-A65D-4359-95CD-409C93517E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ABE3466-A65D-4359-95CD-409C93517E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ABE3466-A65D-4359-95CD-409C93517E65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B8D2718-B288-4F06-85C9-D7A6BAE6D72A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B8D2718-B288-4F06-85C9-D7A6BAE6D72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B8D2718-B288-4F06-85C9-D7A6BAE6D72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B8D2718-B288-4F06-85C9-D7A6BAE6D72A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6496DC90-2E3F-49FC-8AF4-B58F6CC0AD48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6496DC90-2E3F-49FC-8AF4-B58F6CC0AD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6496DC90-2E3F-49FC-8AF4-B58F6CC0AD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6496DC90-2E3F-49FC-8AF4-B58F6CC0AD48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

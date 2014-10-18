@@ -10,10 +10,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using DragonQuiz_Server.Areas.HelpPage.ModelDescriptions;
-using DragonQuiz_Server.Areas.HelpPage.Models;
+using DragonQuiz.Areas.HelpPage.ModelDescriptions;
+using DragonQuiz.Areas.HelpPage.Models;
 
-namespace DragonQuiz_Server.Areas.HelpPage
+namespace DragonQuiz.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

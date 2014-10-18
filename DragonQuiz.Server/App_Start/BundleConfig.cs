@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace DragonQuiz_Server
+namespace DragonQuiz
 {
 	public class BundleConfig
 	{

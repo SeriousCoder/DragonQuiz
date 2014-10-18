@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using DragonQuiz_Server.Areas.HelpPage.ModelDescriptions;
+using DragonQuiz.Areas.HelpPage.ModelDescriptions;
 
-namespace DragonQuiz_Server.Areas.HelpPage.Models
+namespace DragonQuiz.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.
