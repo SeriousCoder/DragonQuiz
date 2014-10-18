@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DragonQuiz;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DragonQuiz;
 
 namespace CreaterQuestions
 {
@@ -41,7 +29,8 @@ namespace CreaterQuestions
             txtAnswer.IsEnabled = false;
             txtComment.IsEnabled = false;
             OkButton.IsEnabled = false;
-            AddBotton.IsEnabled = true;
+            CancelButton.IsEnabled = false;
+            AddButton.IsEnabled = true;
             EditButton.IsEnabled = true;
             DeleteBotton.IsEnabled = true;
             SyncBotton.IsEnabled = true;
@@ -56,7 +45,8 @@ namespace CreaterQuestions
             txtAnswer.IsEnabled = true;
             txtComment.IsEnabled = true;
             OkButton.IsEnabled = true;
-            AddBotton.IsEnabled = false;
+            CancelButton.IsEnabled = true;
+            AddButton.IsEnabled = false;
             EditButton.IsEnabled = false;
             DeleteBotton.IsEnabled = false;
             SyncBotton.IsEnabled = false;
@@ -72,23 +62,30 @@ namespace CreaterQuestions
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var newQuestion = new DQuestion(0, txtContent.Text, txtAnswer.Text, txtComment.Text, txtTag.Text);
-            switch (Status.Text)
+            if (CheckOfIdiot())
             {
-                case "Add":
-                    _listQuestions.Add(newQuestion);
-                    break;
-                case "Edit":
-                    _listQuestions[QList.SelectedIndex] = newQuestion;
-                    break;
-            }
+                var newQuestion = new DQuestion(0, txtContent.Text, txtAnswer.Text, txtComment.Text, txtTag.Text);
+                switch (Status.Text)
+                {
+                    case "Add":
+                        _listQuestions.Add(newQuestion);
+                        break;
+                    case "Edit":
+                        _listQuestions[QList.SelectedIndex] = newQuestion;
+                        break;
+                }
 
-            QList.ItemsSource = _listQuestions;
-            txtContent.Text = "";
-            txtAnswer.Text = "";
-            txtComment.Text = "";
-            Status.Text = "";
-            OffForm_OnButtons();
+                QList.ItemsSource = _listQuestions;
+                txtContent.Text = "";
+                txtAnswer.Text = "";
+                txtComment.Text = "";
+                Status.Text = "";
+                OffForm_OnButtons();
+            }
+            else
+            {
+                MessageBox.Show("You must full graphs: Tags, Content and Answer");
+            }
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -119,6 +116,24 @@ namespace CreaterQuestions
             }
         }
 
+        private bool CheckOfIdiot()
+        {
+            if (txtContent.Text != "" && txtAnswer.Text != "" && txtTag.Text != "")
+            {
+                return true;
+            }
 
+            return false;
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            txtTag.Text = "";
+            txtContent.Text = "";
+            txtAnswer.Text = "";
+            txtComment.Text = "";
+            Status.Text = "";
+            OffForm_OnButtons();
+        }
     }
 }
