@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using DragonQuiz_Server.Areas.HelpPage.ModelDescriptions;
-using DragonQuiz_Server.Areas.HelpPage.Models;
+using DragonQuiz.Areas.HelpPage.ModelDescriptions;
+using DragonQuiz.Areas.HelpPage.Models;
 
-namespace DragonQuiz_Server.Areas.HelpPage.Controllers
+namespace DragonQuiz.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

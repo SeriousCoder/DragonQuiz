@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace DragonQuiz_Server
+namespace DragonQuiz
 {
 	public static class WebApiConfig
 	{

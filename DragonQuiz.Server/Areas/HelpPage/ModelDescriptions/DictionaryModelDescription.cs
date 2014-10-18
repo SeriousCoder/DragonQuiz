@@ -1,4 +1,4 @@
-namespace DragonQuiz_Server.Areas.HelpPage.ModelDescriptions
+namespace DragonQuiz.Areas.HelpPage.ModelDescriptions
 {
     public class DictionaryModelDescription : KeyValuePairModelDescription
     {

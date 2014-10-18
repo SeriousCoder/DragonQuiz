@@ -13,7 +13,7 @@ using System.Web.Http.Description;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 
-namespace DragonQuiz_Server.Areas.HelpPage
+namespace DragonQuiz.Areas.HelpPage
 {
     /// <summary>
     /// This class will generate the samples for the help page.

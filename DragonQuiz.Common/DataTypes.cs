@@ -21,16 +21,17 @@ namespace DragonQuiz
 			this.Comment = comment;
 			this.Tags = tags;
 		}
+		public DQuestion() { }
 	}
 
-	public struct DRequest
+	public class DRequest
 	{
 		public int QuestionsNumber { get; set; }
 		public string Tags { get; set; }
-		public DRequest(int questionsNumber, string tags) : this()
+		public DRequest(int questionsNumber, string tags)
 		{
-			this.QuestionsNumber = questionsNumber;
-			this.Tags = tags;
+			QuestionsNumber = questionsNumber;
+			Tags = tags;
 		}
 	}
 }

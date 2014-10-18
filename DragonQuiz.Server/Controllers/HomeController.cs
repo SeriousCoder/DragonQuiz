@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace DragonQuiz_Server.Controllers
+namespace DragonQuiz.Controllers
 {
 	public class HomeController : Controller
 	{

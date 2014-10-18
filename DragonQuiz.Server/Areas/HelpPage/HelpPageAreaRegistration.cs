@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace DragonQuiz_Server.Areas.HelpPage
+namespace DragonQuiz.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

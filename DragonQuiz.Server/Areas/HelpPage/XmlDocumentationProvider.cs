@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using DragonQuiz_Server.Areas.HelpPage.ModelDescriptions;
+using DragonQuiz.Areas.HelpPage.ModelDescriptions;
 
-namespace DragonQuiz_Server.Areas.HelpPage
+namespace DragonQuiz.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
