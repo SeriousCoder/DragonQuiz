@@ -46,6 +46,7 @@ namespace CreaterQuestions
             DeleteBotton.IsEnabled = true;
             SyncBotton.IsEnabled = true;
             PushBotton.IsEnabled = true;
+            QList.IsEnabled = true;
         }
 
         private void OnForm_OffButtons()
@@ -60,6 +61,7 @@ namespace CreaterQuestions
             DeleteBotton.IsEnabled = false;
             SyncBotton.IsEnabled = false;
             PushBotton.IsEnabled = false;
+            QList.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -70,17 +72,18 @@ namespace CreaterQuestions
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            var newQuestion = new DQuestion(0, txtContent.Text, txtAnswer.Text, txtComment.Text, txtTag.Text);
             switch (Status.Text)
             {
                 case "Add":
-                    var newQuestion = new DQuestion(0, txtContent.Text, txtAnswer.Text, txtComment.Text, txtTag.Text);
                     _listQuestions.Add(newQuestion);
-                    QList.ItemsSource = _listQuestions;
                     break;
-                //case "Edit":
-
+                case "Edit":
+                    _listQuestions[QList.SelectedIndex] = newQuestion;
+                    break;
             }
 
+            QList.ItemsSource = _listQuestions;
             txtContent.Text = "";
             txtAnswer.Text = "";
             txtComment.Text = "";
@@ -90,8 +93,21 @@ namespace CreaterQuestions
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            Status.Text = "Edit";
-            OnForm_OffButtons();
+            if (QList.SelectedIndex != -1)
+            {
+                Status.Text = "Edit";
+                OnForm_OffButtons();
+
+                txtTag.Text = _listQuestions[QList.SelectedIndex].Tags;
+                txtContent.Text = _listQuestions[QList.SelectedIndex].Content;
+                txtAnswer.Text = _listQuestions[QList.SelectedIndex].Answer;
+                txtComment.Text = _listQuestions[QList.SelectedIndex].Comment;
+            }
+        }
+
+        private void QList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
 
 
