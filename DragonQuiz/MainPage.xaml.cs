@@ -36,6 +36,11 @@ namespace DragonQuiz
             numberBox.ItemsSource = comboBoxItems;
             numberBox.SelectedIndex = 2;
 
+            AnswerBlock.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            Answer.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            CommentBlock.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            Comment.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+
         }
 
         /// <summary>
@@ -68,15 +73,28 @@ namespace DragonQuiz
         private void QList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Question.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            Answer.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            Comment.Visibility = Windows.UI.Xaml.Visibility.Visible;
             FeedBack.IsEnabled = true;
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             FeedBack.IsEnabled = false;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            AnswerBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Answer.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            CommentBlock.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Comment.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            AnswerBlock.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            Answer.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            CommentBlock.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            Comment.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
     }
 }
