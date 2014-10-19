@@ -288,16 +288,13 @@
             <RowDefinition Height="142*"/>
             <RowDefinition Height="31*"/>
         </Grid.RowDefinitions>
-        <StackPanel HorizontalAlignment="Left" Height="925" VerticalAlignment="Top" Width="881" Grid.ColumnSpan="3" Grid.RowSpan="5" Background="#FFC0BFBF" Margin="0,155,0,0">
-            <StackPanel Height="925" Margin="0,0,822,0" Background="#FF818181"/>
-        </StackPanel>
-        <ListView x:Name="QList" HorizontalAlignment="Left" Height="714" Margin="38,47,0,0" VerticalAlignment="Top" Width="714" Grid.Row="2" ItemsSource="{Binding}" Foreground="#FF5D5D5D"  HorizontalContentAlignment="Stretch" Style="{StaticResource ListViewStyle1}" ItemClick="QList_ItemClick" SelectionChanged="QList_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" Background="#FFC0BFBF">
+        <StackPanel HorizontalAlignment="Left" Height="925" VerticalAlignment="Top" Width="881" Grid.ColumnSpan="3" Grid.RowSpan="5" Background="#FFC0BFBF" Margin="0,155,0,0"/>
+        <ListView x:Name="QList" HorizontalAlignment="Left" Height="714" Margin="28,47,0,0" VerticalAlignment="Top" Width="714" Grid.Row="2" ItemsSource="{Binding}" Foreground="White"  HorizontalContentAlignment="Stretch" Style="{StaticResource ListViewStyle1}" ItemClick="QList_ItemClick" SelectionChanged="QList_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" Background="#FF949494">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel  Width="714">
                         <Grid >
                             <Grid.RowDefinitions>
-                                <RowDefinition/>
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
@@ -307,8 +304,6 @@
                             </Grid.ColumnDefinitions>
                             <TextBlock Margin="10,10,0,0" Foreground="White" Grid.Row="0" Grid.Column="0" Text="Вопрос:"/>
                             <TextBlock Margin="10,10,0,0" Foreground="White" Grid.Row="0" Grid.Column="1" Text="{Binding Content}" />
-                            <TextBlock Margin="10,10,0,0" Foreground="White" Grid.Row="1" Grid.Column="0" Text="Ответ:"/>
-                            <TextBlock Margin="10,10,0,0" Foreground="White" Grid.Row="1" Grid.Column="1" Text="{Binding Answer}"/>
                             <TextBlock Margin="10,10,0,10" Foreground="White" Grid.Row="2" Grid.Column="0" Text="Категория:"/>
                             <TextBlock Margin="10,10,0,10" Foreground="White" Grid.Row="2" Grid.Column="1" Text="{Binding Tags}"/>
                         </Grid>
@@ -317,7 +312,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <ComboBox x:Name="numberBox" HorizontalAlignment="Left" Margin="28,26,0,0" VerticalAlignment="Top" Width="213" Grid.Row="1" Grid.Column="1" Height="76" />
-        <TextBox x:Name="tagBox" HorizontalAlignment="Left" Height="76" Margin="2,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="471" Grid.Row="1" Grid.Column="2" FontSize="36"/>
+        <TextBox x:Name="tagBox" HorizontalAlignment="Left" Height="76" Margin="2,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="471" Grid.Row="1" Grid.Column="2" FontSize="36" Foreground="#FF5D5D5D"/>
         <Button Content="получить вопросы" HorizontalAlignment="Left" Height="76" Margin="31,26,0,0" VerticalAlignment="Top" Width="300" Grid.Row="1" Grid.Column="3" Click="Button_Click" FontWeight="Normal" BorderBrush="#CC00AD9F" Background="#CC00AD9F" Foreground="White" FontSize="24"/>
         <FlipView Grid.Column="2" HorizontalAlignment="Left" Margin="294,362,0,0" Grid.Row="2" VerticalAlignment="Top" Height="353" Width="6" Grid.RowSpan="2"/>
         <StackPanel Grid.Column="3" HorizontalAlignment="Left" Height="569" Margin="31,47,0,0" Grid.Row="2" VerticalAlignment="Top" Width="584" Background="White">
@@ -358,9 +353,8 @@
         <StackPanel HorizontalAlignment="Left" Height="159" VerticalAlignment="Top" Width="1920" Grid.ColumnSpan="5" Background="White">
             <TextBlock TextWrapping="Wrap" Text="DragonQuiz" Foreground="#CC009D91" FontSize="72" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,50,0,0" Height="90"/>
         </StackPanel>
-        <StackPanel Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Height="925" Margin="781,0,0,0" Grid.RowSpan="5" VerticalAlignment="Bottom" Width="229" Background="#FFC0BFBF">
-            <StackPanel Height="928" Margin="90,50,0,0" Background="#FF818181"/>
-        </StackPanel>
+        <StackPanel Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Height="925" Margin="769,0,0,0" Grid.RowSpan="5" VerticalAlignment="Bottom" Width="241" Background="#FF949494"/>
+        <CheckBox Content="показывать ответы" Grid.Column="3" HorizontalAlignment="Left" Margin="31,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="31" Width="168" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
 
     </Grid>
 </Page>
