@@ -319,30 +319,30 @@
             <StackPanel>
                 <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="120"/>
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="Question" Grid.Row="0" Grid.Column="0" Text="Вопрос:" Margin="10,10,0,0" Visibility="Collapsed" FontSize="14"/>
-                    <TextBlock x:Name="ContentBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding}" VerticalAlignment="Top" Width="464"  DataContext="{Binding SelectedItem.Content, ElementName=QList}" FontSize="16" Margin="10,10,0,0" Foreground="#FF5D5D5D" Grid.Column="1"/>
+                    <TextBlock x:Name="Question" Grid.Row="0" Grid.Column="0" Text="Вопрос:" Margin="20,20,0,0" Visibility="Collapsed" FontSize="14"/>
+                    <TextBlock x:Name="ContentBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding}" VerticalAlignment="Top" Width="464"  DataContext="{Binding SelectedItem.Content, ElementName=QList}" FontSize="16" Margin="10,20,0,0" Foreground="#FF5D5D5D" Grid.Column="1"/>
                 </Grid>
             </StackPanel>
             <StackPanel>
                 <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="120"/>
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="Answer" Grid.Row="0" Grid.Column="0" Text="Ответ:" Margin="10,10,0,0" Visibility="Collapsed" FontSize="14"/>
+                    <TextBlock x:Name="Answer" Grid.Row="0" Grid.Column="0" Text="Ответ:" Margin="20,10,0,0" Visibility="Collapsed" FontSize="14"/>
                     <TextBlock x:Name="AnswerBlock" TextWrapping="Wrap" Text="{Binding}" DataContext="{Binding SelectedItem.Answer, ElementName=QList}" FontSize="16" Margin="10" Foreground="#FF5D5D5D" Grid.Column="1" />
                 </Grid>
             </StackPanel>
             <StackPanel >
                 <Grid >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="120"/>
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="Comment" Grid.Row="0" Grid.Column="0" Text="Комментарий:" Margin="10,10,0,0" Visibility="Collapsed" FontSize="14"/>
+                    <TextBlock x:Name="Comment" Grid.Row="0" Grid.Column="0" Text="Комментарий:" Margin="20,10,0,0" Visibility="Collapsed" FontSize="14"/>
                     <TextBlock x:Name="CommentBlock" TextWrapping="Wrap" Text="{Binding}" DataContext="{Binding SelectedItem.Comment, ElementName=QList}" FontSize="16" Margin="10" Foreground="#FF5D5D5D" Grid.Column="1" />
                 </Grid>
             </StackPanel>
@@ -353,8 +353,12 @@
         <StackPanel HorizontalAlignment="Left" Height="159" VerticalAlignment="Top" Width="1920" Grid.ColumnSpan="5" Background="White">
             <TextBlock TextWrapping="Wrap" Text="DragonQuiz" Foreground="#CC009D91" FontSize="72" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,50,0,0" Height="90"/>
         </StackPanel>
-        <StackPanel Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Height="925" Margin="769,0,0,0" Grid.RowSpan="5" VerticalAlignment="Bottom" Width="241" Background="#FF949494"/>
         <CheckBox Content="показывать ответы" Grid.Column="3" HorizontalAlignment="Left" Margin="31,10,0,0" Grid.Row="3" VerticalAlignment="Top" Height="31" Width="168" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <StackPanel Grid.ColumnSpan="2" Grid.Column="3" HorizontalAlignment="Left" Height="403.314" Margin="816.267,603.59,-17.267,-187.904" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Top" Width="211" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Background="Gray">
+            <StackPanel.RenderTransform>
+                <CompositeTransform Rotation="56.042"/>
+            </StackPanel.RenderTransform>
+        </StackPanel>
 
     </Grid>
 </Page>

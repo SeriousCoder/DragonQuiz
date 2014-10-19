@@ -26,8 +26,7 @@ namespace DragonQuiz
         public MainPage()
         {
             this.InitializeComponent();
-            // this.ApplicationTheme.Light;
-            for (int i = 1; i <= 10; ++i)
+            for (int i = 1; i <= 15; ++i)
             {
                 comboBoxItems.Add(i);
             }
@@ -60,7 +59,6 @@ namespace DragonQuiz
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
 			DRequest request = new DRequest((int)numberBox.SelectedItem, tagBox.Text);
-            //var response = Integration.getPackage(request);
             List<DQuestion> response = await DatabaseIO.GetPack(request);
             setQList(response);
         }
