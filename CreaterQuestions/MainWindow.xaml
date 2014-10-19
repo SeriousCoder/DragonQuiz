@@ -1,7 +1,7 @@
 ﻿<Window x:Class="CreaterQuestions.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CreatorQuestions" Height="643" Width="1017.688" ResizeMode="NoResize">
+        Title="DragonQuiz questions creator" Height="643" Width="1017.688" ResizeMode="NoResize">
     <Grid Background="#FFC0BFBF" Margin="0,0,-6.8,0.6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15"/>
