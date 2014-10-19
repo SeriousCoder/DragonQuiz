@@ -44,7 +44,7 @@ namespace DragonQuiz.Controllers
 				Random rnd = new Random();
 				var res = (qNum > 0) ? query.Take(qNum).ToArray() : query.ToArray();
 
-				if (qNum <= res.Length)
+				if ((0 < qNum) && (qNum <= res.Length))
 					res = res.OrderBy(x => rnd.Next(qNum)).ToArray();
 				//if (qArr.Length < qNum)
 				//string s = JsonConvert.SerializeObject(res);
