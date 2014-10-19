@@ -19,10 +19,10 @@
         <Button x:Name="PushBotton" Content="Push" Margin="41.4,552,-122.6,0" VerticalAlignment="Top" Grid.Column="7" Height="35" Click="PushBotton_Click" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
         <TextBox x:Name="txtTag" HorizontalAlignment="Left" Height="32" Margin="19.6,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0"/>
         <Button x:Name="AddButton" Content="Add" Margin="41.4,153,-122.6,0" VerticalAlignment="Top" Grid.Column="7" Height="35" Click="Button_Click" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
-        <TextBox x:Name="txtContent" HorizontalAlignment="Left" Height="128" Margin="19.6,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0" />
+        <TextBox x:Name="txtContent" HorizontalAlignment="Left" Height="128" Margin="19.6,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0" AcceptsReturn="True" />
         <TextBox x:Name="txtAnswer" HorizontalAlignment="Left" Height="33" Margin="22.6,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,351,0,0" TextWrapping="Wrap" Text="Answer :" VerticalAlignment="Top" Height="22" Width="93" TextAlignment="Center" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="txtComment" HorizontalAlignment="Left" Height="103" Margin="21.6,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0"/>
+        <TextBox x:Name="txtComment" HorizontalAlignment="Left" Height="103" Margin="21.6,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0" AcceptsReturn="True"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,402,0,0" TextWrapping="Wrap" Text="Comment :" VerticalAlignment="Top" Height="24" Width="93" TextAlignment="Center" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,201,0,0" TextWrapping="Wrap" Text="Content :" VerticalAlignment="Top" Height="24" Width="93" TextAlignment="Center" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,153,0,0" TextWrapping="Wrap" Text="Tag :" VerticalAlignment="Top" Width="93" TextAlignment="Center" Height="22" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
@@ -40,7 +40,7 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <TextBlock Margin="5,5,0,0" Grid.Row="0" Grid.Column="0" Text="Вопрос:"/>
-                            <TextBlock Margin="5,5,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Content}" />
+                            <TextBlock Margin="5,5,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Id}" />
                             <TextBlock Margin="5,5,0,5" Grid.Row="2" Grid.Column="0" Text="Категория:"/>
                             <TextBlock Margin="5,5,0,5" Grid.Row="2" Grid.Column="1" Text="{Binding Tags}"/>
                         </Grid>
