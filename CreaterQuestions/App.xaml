@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="MenuHighlightBrushKey" Color="#CC00AD9F" />
+        <SolidColorBrush x:Key="HotTrackBrushKey" Color="#CC00AD9F" />
+        <SolidColorBrush x:Key="HighlightBrushKey" Color="#CC00AD9F" />
     </Application.Resources>
 </Application>
