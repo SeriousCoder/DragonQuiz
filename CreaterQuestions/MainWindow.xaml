@@ -26,7 +26,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,402,0,0" TextWrapping="Wrap" Text="Comment :" VerticalAlignment="Top" Height="24" Width="93" TextAlignment="Center" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,201,0,0" TextWrapping="Wrap" Text="Content :" VerticalAlignment="Top" Height="24" Width="93" TextAlignment="Center" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,153,0,0" TextWrapping="Wrap" Text="Tag :" VerticalAlignment="Top" Width="93" TextAlignment="Center" Height="22" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
-        <ListView x:Name="QList" Grid.Column="7" HorizontalAlignment="Left" Height="434" Margin="163.4,153,-470.8,0" VerticalAlignment="Top" Width="329" ItemsSource="{Binding}" SelectionChanged="QList_SelectionChanged" BorderThickness="0" Background="#FFC0BFBF" Foreground="White">
+        <ListView x:Name="QList" Grid.Column="7" HorizontalAlignment="Left" Height="434" Margin="163.4,153,-470.8,0" VerticalAlignment="Top" Width="329" ItemsSource="{Binding}" SelectionChanged="QList_SelectionChanged" BorderThickness="0" Background="#FF949494" Foreground="White">
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <StackPanel  Width="315">
@@ -56,6 +56,16 @@
         <Button x:Name="CancelButton" Content="Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="147.6,547,0,0" VerticalAlignment="Top" Width="104" IsEnabled="False" Click="Cancel_Click" Height="40" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
         <StackPanel Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="1018" Margin="0,0,-503.6,0" Background="White"/>
         <TextBlock TextWrapping="Wrap" Text="DragonQuiz" Foreground="#CC009D91" FontSize="72" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14.4,10,0,0" Height="95" Grid.ColumnSpan="4" Grid.Column="1" Width="434"/>
+        <StackPanel Margin="-112,575,186.4,-54" Grid.ColumnSpan="3" RenderTransformOrigin="0.5,0.5" Background="Gray">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="29.959"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+        </StackPanel>
 
 
     </Grid>
