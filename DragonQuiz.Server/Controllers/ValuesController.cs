@@ -36,15 +36,13 @@ namespace DragonQuiz.Controllers
 			{
 				// Display all Blogs from the database 
 				var query = from b in db.Questions
-							
 							where b.Tags == tags // HACK: отвратительный костыль; а если тегов несколько?
-							
 							select b;
 
 				//DQuestion[] qArr = query.ToArray<DQuestion>(); 
 
-				Random rnd = new Random();
-				var res = query.Take(qNum).ToArray();
+				//Random rnd = new Random();
+				var res = (qNum > 0) ? query.Take(qNum).ToArray() : query.ToArray();
 				//if (qArr.Length < qNum)
 				//string s = JsonConvert.SerializeObject(res);
 				////return s;

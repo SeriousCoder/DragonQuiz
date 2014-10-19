@@ -1,43 +1,61 @@
 ﻿<Window x:Class="CreaterQuestions.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CreatorQuestions" Height="379" Width="729">
-    <Grid>
+        Title="CreatorQuestions" Height="643" Width="1017.688" ResizeMode="NoResize">
+    <Grid Background="#FFC0BFBF" Margin="0,0,-6.8,0.6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15"/>
-            <ColumnDefinition Width="Auto" MinWidth="330"/>
+            <ColumnDefinition Width="72"/>
+            <ColumnDefinition Width="272"/>
             <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="Auto" MinWidth="74.4"/>
+            <ColumnDefinition Width="10.4"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="15"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="PushBotton" Content="Push" HorizontalAlignment="Left" Margin="1,294,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22" Click="PushBotton_Click"/>
-        <TextBox x:Name="txtTag" HorizontalAlignment="Left" Height="23" Margin="73,50,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="258" Grid.Column="1" IsEnabled="False"/>
-        <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="1,51,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Height="22" Click="Button_Click"/>
-        <TextBox x:Name="txtContent" HorizontalAlignment="Left" Height="91" Margin="73,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Grid.Column="1" IsEnabled="False" />
-        <TextBox x:Name="txtAnswer" HorizontalAlignment="Left" Height="23" Margin="75,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Grid.Column="1" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0,192,0,0" TextWrapping="Wrap" Text="Answer :" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="68" TextAlignment="Center"/>
-        <TextBox x:Name="txtComment" HorizontalAlignment="Left" Height="72" Margin="74,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Grid.Column="1" IsEnabled="False"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,229,0,0" TextWrapping="Wrap" Text="Comment :" VerticalAlignment="Top" Height="16" Width="68" TextAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" Text="Content :" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="68" TextAlignment="Center"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" Text="Tag :" VerticalAlignment="Top" Width="68" TextAlignment="Center"/>
-        <ListView x:Name="QList" Grid.Column="6" HorizontalAlignment="Left" Height="329" Margin="16,10,-232,0" VerticalAlignment="Top" Width="232" ItemsSource="{Binding}" SelectionChanged="QList_SelectionChanged">
+        <StackPanel Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="504" Margin="-2,110,0,0" VerticalAlignment="Top" Width="511" Background="#FFF1F1F1"/>
+
+
+        <Button x:Name="PushBotton" Content="Push" Margin="41.4,552,-122.6,0" VerticalAlignment="Top" Grid.Column="7" Height="35" Click="PushBotton_Click" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
+        <TextBox x:Name="txtTag" HorizontalAlignment="Left" Height="32" Margin="19.6,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0"/>
+        <Button x:Name="AddButton" Content="Add" Margin="41.4,153,-122.6,0" VerticalAlignment="Top" Grid.Column="7" Height="35" Click="Button_Click" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
+        <TextBox x:Name="txtContent" HorizontalAlignment="Left" Height="128" Margin="19.6,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0" />
+        <TextBox x:Name="txtAnswer" HorizontalAlignment="Left" Height="33" Margin="22.6,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,351,0,0" TextWrapping="Wrap" Text="Answer :" VerticalAlignment="Top" Height="22" Width="93" TextAlignment="Center" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="txtComment" HorizontalAlignment="Left" Height="103" Margin="21.6,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="353" Grid.Column="2" IsEnabled="False" SelectionBrush="#FF575D63" Foreground="#FF5D5D5D" Grid.ColumnSpan="3" BorderThickness="0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,402,0,0" TextWrapping="Wrap" Text="Comment :" VerticalAlignment="Top" Height="24" Width="93" TextAlignment="Center" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,201,0,0" TextWrapping="Wrap" Text="Content :" VerticalAlignment="Top" Height="24" Width="93" TextAlignment="Center" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,153,0,0" TextWrapping="Wrap" Text="Tag :" VerticalAlignment="Top" Width="93" TextAlignment="Center" Height="22" Foreground="#FF5D5D5D" Grid.ColumnSpan="3"/>
+        <ListView x:Name="QList" Grid.Column="7" HorizontalAlignment="Left" Height="434" Margin="163.4,153,-470.8,0" VerticalAlignment="Top" Width="329" ItemsSource="{Binding}" SelectionChanged="QList_SelectionChanged" BorderThickness="0" Background="#FFC0BFBF" Foreground="White">
             <ListView.ItemTemplate>
                 <DataTemplate >
-                    <StackPanel>
-                        <TextBlock Text="{Binding Content}"/>
-                        <TextBlock Text="{Binding Tags}"/>
+                    <StackPanel  Width="315">
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Margin="5,5,0,0" Grid.Row="0" Grid.Column="0" Text="Вопрос:"/>
+                            <TextBlock Margin="5,5,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Content}" />
+                            <TextBlock Margin="5,5,0,5" Grid.Row="2" Grid.Column="0" Text="Категория:"/>
+                            <TextBlock Margin="5,5,0,5" Grid.Row="2" Grid.Column="1" Text="{Binding Tags}"/>
+                        </Grid>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock x:Name="Status" Grid.Column="1" HorizontalAlignment="Left" Margin="10,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.9,-0.625" Width="313" TextAlignment="Center" FontSize="16" FontWeight="Bold" TextDecorations="{x:Null}"/>
-        <Button x:Name="OkButton" Content="Ok" Grid.Column="1" HorizontalAlignment="Left" Margin="99,317,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="Button_Click_1"/>
-        <Button x:Name="EditButton" Content="Edit" Grid.Column="3" HorizontalAlignment="Left" Margin="0,78,0,0" VerticalAlignment="Top" Width="75" Click="EditButton_Click"/>
-        <Button x:Name="DeleteBotton" Content="Delete" Grid.Column="3" HorizontalAlignment="Left" Margin="0,105,0,0" VerticalAlignment="Top" Width="75" Click="DeleteBotton_Click"/>
-        <Button x:Name="SyncBotton" Content="Sync" Grid.Column="3" HorizontalAlignment="Left" Margin="1,267,0,0" VerticalAlignment="Top" Width="75" Click="SyncBotton_Click"/>
-        <Button x:Name="CancelButton" Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="189,317,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="Cancel_Click"/>
+        <TextBlock x:Name="Status" Grid.Column="2" HorizontalAlignment="Left" Margin="19.6,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.9,-0.625" Width="354" FontSize="16" TextDecorations="{x:Null}" Height="29" Grid.ColumnSpan="3" Foreground="#FF3E3E40"/>
+        <Button x:Name="OkButton" Content="Ok" Grid.Column="2" HorizontalAlignment="Left" Margin="19.6,547,0,0" VerticalAlignment="Top" Width="104" IsEnabled="False" Click="Button_Click_1" Height="40" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
+        <Button x:Name="EditButton" Content="Edit" Grid.Column="7" Margin="41.4,196,-122.6,0" VerticalAlignment="Top" Click="EditButton_Click" Height="34" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
+        <Button x:Name="DeleteBotton" Content="Delete" Grid.Column="7" Margin="41.4,237,-122.6,0" VerticalAlignment="Top" Click="DeleteBotton_Click" Height="35" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
+        <Button x:Name="SyncBotton" Content="Sync" Grid.Column="7" Margin="41.4,510,-122.6,0" VerticalAlignment="Top" Click="SyncBotton_Click" Height="35" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
+        <Button x:Name="CancelButton" Content="Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="147.6,547,0,0" VerticalAlignment="Top" Width="104" IsEnabled="False" Click="Cancel_Click" Height="40" Foreground="White" BorderBrush="#00707070" Background="#CC00AD9F"/>
+        <StackPanel Grid.ColumnSpan="8" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="1018" Margin="0,0,-503.6,0" Background="White"/>
+        <TextBlock TextWrapping="Wrap" Text="DragonQuiz" Foreground="#CC009D91" FontSize="72" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14.4,10,0,0" Height="95" Grid.ColumnSpan="4" Grid.Column="1" Width="434"/>
 
 
     </Grid>
