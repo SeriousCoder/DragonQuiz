@@ -40,7 +40,7 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <TextBlock Margin="5,5,0,0" Grid.Row="0" Grid.Column="0" Text="Вопрос:"/>
-                            <TextBlock Margin="5,5,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Id}" />
+                            <TextBlock Margin="5,5,0,0" Grid.Row="0" Grid.Column="1" Text="{Binding Content}" />
                             <TextBlock Margin="5,5,0,5" Grid.Row="2" Grid.Column="0" Text="Категория:"/>
                             <TextBlock Margin="5,5,0,5" Grid.Row="2" Grid.Column="1" Text="{Binding Tags}"/>
                         </Grid>
