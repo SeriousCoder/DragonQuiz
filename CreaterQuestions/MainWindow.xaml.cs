@@ -13,6 +13,7 @@ namespace CreaterQuestions
     public partial class MainWindow : Window
     {
         private ObservableCollection<DQuestion> _listQuestions;
+        private int _id;
 
         public MainWindow()
         {
@@ -60,13 +61,14 @@ namespace CreaterQuestions
         {
             Status.Text = "Add";
             OnForm_OffButtons();
+            _id = -1;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (CheckOfIdiot())
             {
-                var newQuestion = new DQuestion(0, txtContent.Text, txtAnswer.Text, txtComment.Text, txtTag.Text);
+                var newQuestion = new DQuestion(_id, txtContent.Text, txtAnswer.Text, txtComment.Text, txtTag.Text);
                 switch (Status.Text)
                 {
                     case "Add":
@@ -102,6 +104,7 @@ namespace CreaterQuestions
             {
                 Status.Text = "Edit";
                 OnForm_OffButtons();
+                _id = _listQuestions[QList.SelectedIndex].Id;
 
                 txtTag.Text = _listQuestions[QList.SelectedIndex].Tags;
                 txtContent.Text = _listQuestions[QList.SelectedIndex].Content;
