@@ -41,8 +41,11 @@ namespace DragonQuiz.Controllers
 
 				//DQuestion[] qArr = query.ToArray<DQuestion>(); 
 
-				//Random rnd = new Random();
+				Random rnd = new Random();
 				var res = (qNum > 0) ? query.Take(qNum).ToArray() : query.ToArray();
+
+				if (qNum <= res.Length)
+					res = res.OrderBy(x => rnd.Next(qNum)).ToArray();
 				//if (qArr.Length < qNum)
 				//string s = JsonConvert.SerializeObject(res);
 				////return s;
@@ -66,7 +69,7 @@ namespace DragonQuiz.Controllers
 				foreach (var item in questionsList)
 				{
 					var foundItem = db.Questions
-						  .Where(p => p.Content == item.Content).FirstOrDefault();
+						  .Where(p => p.Id == item.Id).FirstOrDefault();
 
 					if (foundItem == null)
 					{
